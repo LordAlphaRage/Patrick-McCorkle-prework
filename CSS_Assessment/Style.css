@@ -1,0 +1,44 @@
+#navbar {
+
+background-color: gray;
+text-align: center;
+
+}
+
+div.box1 {
+
+    background-color: blue;
+    width: 50%;
+    height: 50%;
+    float: left;
+
+}
+
+
+h2 {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 250px;
+
+}
+
+div.box2 {
+
+    background-color: red;
+    width: 25%;
+    height: 50%;
+    float: right;
+
+}
+
+#Footer {
+
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: green;
+text-align: center;
+font-weight: bold;
+
+}
