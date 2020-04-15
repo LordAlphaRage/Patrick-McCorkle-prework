@@ -1,25 +1,84 @@
-.img-fluid  {
-  
-  
-  float: left;
+.container {
 
-
-
+background-color: grey;
 
 }
 
 
 
+.navbar-brand {
+
+  margin-left: 50px;
+  background-color: #4aaaa5;
+  color: white;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  height: 50px;
+  text-justify: center;
+
+
+}
+
+.nav-item  {
+
+  margin-left: 15px;
+  margin-right: 15px;
+
+}
+
+.nav-link  {
+
+  color: #777777;
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+
+}
+
+.page-header {
+
+  border-color: #cccccc;
+  color:#4aaaa5;
+  font-family: 'Georgia', Times, Times New Roman, serif;
+  font-weight: bold;
+  font-size: 2em;
+  margin-bottom: 20px;
+
+}
+
+.jumbotron {
+
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: white;
+  line-height: 2.0;
 
 
 
+}
 
+.img-fluid  {
+  
+  float: left;
 
+}
 
+.caption   {
+
+  border: 2px blue;
+  color: teal;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+
+}
+
+.text-muted  {
+
+  color: white;
+}
 
 
 .footer {
-   
+
+    margin-top: 50px;
     bottom: 0;
     width: 100%;
     height: 60px;
