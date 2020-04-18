@@ -1,0 +1,17 @@
+var Emperors =  {
+"Augustus"
+"Claudius"
+"Vespasian"
+"Nerva"
+"Trajan"
+"Marcus Aurelius"
+"Septimius Severus"
+"Aurelian"
+"Diocletian"
+"Constantine"
+"Julian"
+"Valens"
+"Theodosius"
+"Valentinian"
+"Romulus Augustulus"
+}
