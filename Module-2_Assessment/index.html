@@ -12,16 +12,66 @@
 <body>
 
 <div class="container-fluid">
- <h1 class="text-center">Name that Emperor!</h1>
-  <div class="float-right">Incorrect Guesses: <span id='Mistakes'>0</span> of <span id='MaxMistakes'></span></div>
-  <div class="float-right">Wins!:</div>
-  <div class="text-center">
-   <p>Can you name the master of Rome?</p>
-   <p id="wordHighlight">The Emperor to be divined goes here!</p>
-   <div id="keyboard"></div>
-   <button class= "btn btn-warning" onClick="reset()">Reset</button>
+
+  <!-- Main Heading -->
+ <div class="row text-center">
+   <div class= "col-sm-12 mb-4">
+   <h1>Name that Emperor!</h1>
+   </div>
+  </div>
+
+  <!-- Row of Pictures -->
+
+  <div class= "row">
+
+    <div class="col-sm-4">
+    <img src="assets/images/Imperator Statue.jpg" class= "img-fluid" alt= "Imperator Statue">
+    </div>
+
+    <div class="col-sm-4">
+    <img src="assets/images/SPQR.jpg" class= "img-fluid" alt= "SPQR">
+    </div>
+
+    <div class="col-sm-4">
+    <img src="assets/images/Tetrarchy 2.jpg" class= "img-fluid" alt= "Tetrarchy 2">
+    </div>
+
+  </div>
+
+
+  <div class="row text-center m-2">
+
+      <div class="col-md-12">
+      <p>Can you name the master of Rome?</p>
+      </div>
+
+  </div>
+
+  <div class="row text-center m-2">
+
+    <div class="col-md-12">
+      
+    <p id="wordHighlight">The Emperor to be divined goes here!</p>
+    <div class="underscores">_ _ _ _ _ _</div>
+    <button class= "btn btn-warning" onClick="reset()">Reset</button>
+    </div>
+
+    </div>
+  
+   </div>
 
 </div>
+
+<div class="row text-center m-2">
+
+  <div class="col-md-6">
+  <h2>Incorrect Guesses: <span id='Mistakes'>0</span> of <span id='MaxMistakes'></span></h2>
+  </div>
+  
+  <div class="col-md-6">
+  <h3>Wins: </h3>
+  </div>
+
 </div>
 
 <script src="assets/javascript/game.js"></script>

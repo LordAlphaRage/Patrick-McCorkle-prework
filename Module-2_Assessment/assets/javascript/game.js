@@ -1,3 +1,5 @@
+//Create An Array 
+
 //Array of Emperors
 
 const emperors =  [
@@ -34,37 +36,37 @@ const emperors =  [
 
 ];
 
-let answer = ''; 
+const randomEmp = Math.floor(Math.random() * emperors.length);
+const answer =emperors[randomEmp];
+const myLength = answer.length;
+const display = [myLength];
+var win = myLength;
+var letters = answer.split('');
+var attemptsRemain= 10;
+var output= "";
+var userLetter;
 
-let MaxMistakes = 5;
+alert(answer);
 
-let Mistakes = 0;
 
-let guessed = [];
+var setup = function ()  {
 
-let wordStatus = null;
+  for (var i=0; i< answer.lengthl i++)
 
-function randomEmp()  {
-    
-answer = emperors[Math.floor(Math.random() * emperors.length)];
+  {
+    display[i] = "_";
+    output = output+display[i];
+
+  }
+
+  document.getElementById("emperors").innerHTML = output;
+  output ="";
 
 }
 
-function generateButtons() {
-    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
-      `
-        <button
-          class="btn btn-lg btn-danger m-2"
-          id='` + letter + `'
-          onClick="handleGuess('` + letter + `')"
-        >
-          ` + letter + `
-        </button>
-      `).join('');
-  
-    document.getElementById('keyboard').innerHTML = buttonsHTML;
-  }
+//Use plenty of functions!
 
-randomEmp();
+//Choose emperor randomly
 
-generateButtons();
+//Create underscores based on lengths of words
+
