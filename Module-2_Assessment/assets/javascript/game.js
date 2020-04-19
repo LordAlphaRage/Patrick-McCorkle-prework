@@ -48,8 +48,23 @@ function randomEmp()  {
     
 answer = emperors[Math.floor(Math.random() * emperors.length)];
 
-alert(answer);
-
 }
 
+function generateButtons() {
+    let buttonsHTML = 'abcdefghijklmnopqrstuvwxyz'.split('').map(letter =>
+      `
+        <button
+          class="btn btn-lg btn-danger m-2"
+          id='` + letter + `'
+          onClick="handleGuess('` + letter + `')"
+        >
+          ` + letter + `
+        </button>
+      `).join('');
+  
+    document.getElementById('keyboard').innerHTML = buttonsHTML;
+  }
+
 randomEmp();
+
+generateButtons();
