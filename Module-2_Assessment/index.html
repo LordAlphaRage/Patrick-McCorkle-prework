@@ -13,64 +13,105 @@
 
 <div class="container-fluid">
 
-  <!-- Main Heading -->
- <div class="row text-center">
-   <div class= "col-sm-12 mb-4">
-   <h1>Name that Emperor!</h1>
-   </div>
-  </div>
+     <!-- Main Heading -->
 
-  <!-- Row of Pictures -->
+       <div class="row text-center">
+         <div class= "col-sm-12 mb-4">
+           <h1>Name that Emperor!</h1>
+           </div>
+           </div>
 
-  <div class= "row">
+      <!-- Row of Pictures -->
 
-    <div class="col-sm-4">
-    <img src="assets/images/Imperator Statue.jpg" class= "img-fluid" alt= "Imperator Statue">
-    </div>
+       <div class= "row">
 
-    <div class="col-sm-4">
-    <img src="assets/images/SPQR.jpg" class= "img-fluid" alt= "SPQR">
-    </div>
+         <div class="col-sm-4">
+         <img src="assets/images/Imperator Statue.jpg" class= "img-fluid" alt= "Imperator Statue">
+         </div>
 
-    <div class="col-sm-4">
-    <img src="assets/images/Tetrarchy 2.jpg" class= "img-fluid" alt= "Tetrarchy 2">
-    </div>
+         <div class="col-sm-4">
+         <img src="assets/images/SPQR.jpg" class= "img-fluid" alt= "SPQR">
+         </div>
 
-  </div>
+         <div class="col-sm-4">
+         <img src="assets/images/Tetrarchy 2.jpg" class= "img-fluid" alt= "Tetrarchy 2">
+        </div>
+
+       </div>
+
+        <!-- Current Word Section -->
+
+        <div class="row text-center">
 
 
-  <div class="row text-center m-2">
+          <div class="col-sm-12">
 
-      <div class="col-md-12">
-      <p>Can you name the master of Rome?</p>
+            <p>Divine the Emperor here!</p>
+
+            <div class="underscores">_ _ _ _ _ _</div>
+            <button class= "btn btn-warning" onClick="reset()">Reset</button>
+            </div>
+
+          </div>
+
+       </div>
+
+       <!-- Remaining+Incorrect Guesses -->
+
+      <div class="row text-center m-2">
+
+             <div class="col-sm-6">
+             <h>REMAINING GUESSES:
+             <span id="remainingguesses"></span> 
+             </h>
+             </div>
+
+            <div class="col-sm-6">
+            <h>INCORRECT LITTERIS:
+            <span id="incorrectlitteris"></span>
+            </h>
+            </div>
+
       </div>
 
-  </div>
-
-  <div class="row text-center m-2">
-
-    <div class="col-md-12">
+         <!-- Victory\Losses Section -->
       
-    <p id="wordHighlight">The Emperor to be divined goes here!</p>
-    <div class="underscores">_ _ _ _ _ _</div>
-    <button class= "btn btn-warning" onClick="reset()">Reset</button>
-    </div>
+         <div class="row text-center">
 
-    </div>
+          <div class="col-sm-6">
+
+           <h>Times Victorious: 
+           <span id="victoryrecorder"></span>
+           </h>
+
+           </div>
+
+          <div class="col-sm-6">
+
+          <h>Times Vanquished:
+          <span id="vanquishedrecorder"></span>
+          </h>
+
+
+          </div>
+
+        </div>
   
-   </div>
 
-</div>
+         <!-- Background Theme -->
 
-<div class="row text-center m-2">
+         <div class="row text-center">
 
-  <div class="col-md-6">
-  <h2>Incorrect Guesses: <span id='Mistakes'>0</span> of <span id='MaxMistakes'></span></h2>
-  </div>
-  
-  <div class="col-md-6">
-  <h3>Wins: </h3>
-  </div>
+          <div class="col-md-12">
+
+          <button class= "btn btn primary" onClick="Play Theme">Play Theme!</button>
+          <audio id="Roman Castle">
+          <source src="assets/Roman_Castle.mp3" type=audio/mp3">
+          </audio>
+
+         </div>
+
+     </div>
 
 </div>
 
