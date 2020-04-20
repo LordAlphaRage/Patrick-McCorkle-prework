@@ -17,7 +17,8 @@
 
        <div class="row text-center">
          <div class= "col-sm-12 mb-4">
-           <h1>Name that Emperor!</h1>
+           <h1 id="main heading" onmouseover= "changeHBackground()" onmouseout= "returnHBackground ()" 
+           >Name that Emperor!</h1>
            </div>
            </div>
 
@@ -46,13 +47,17 @@
 
           <div class="col-sm-12">
 
-            <p>Divine the Emperor here!</p>
+            <p id="main p" onmouseover= "changePStuff()" onmouseout= "returnPStuff ()"
+            >Press Any Key And Divine The Emperor!</p>
 
-            <div class="underscores">_ _ _ _ _ _</div>
-            <button class= "btn btn-warning" onClick="reset()">Reset</button>
-            </div>
+               <div>
+               <h2 id="currentEmp">_ _ _ _ _ _</h2>
+               </div>
 
+               
           </div>
+
+          
 
        </div>
 
@@ -61,13 +66,15 @@
       <div class="row text-center m-2">
 
              <div class="col-sm-6">
-             <h>REMAINING GUESSES:
-             <span id="remainingguesses"></span> 
+             <h id="guesses" onmouseover= "changeGStuff()" onmouseout= "returnGStuff ()">
+             REMAINING GUESSES:
+             <span id="attemptsremain"></span> 
              </h>
              </div>
 
             <div class="col-sm-6">
-            <h>INCORRECT LITTERIS:
+            <h id="guesses 2" onmouseover= "changeG2Stuff()" onmouseout= "returnG2Stuff ()"
+            >INCORRECT LITTERIS:
             <span id="incorrectlitteris"></span>
             </h>
             </div>
@@ -102,7 +109,7 @@
 
          <div class="row text-center">
 
-          <div class="col-md-12">
+          <div class="col-md-12" >
 
           <button class= "btn btn primary" onClick="Play Theme">Play Theme!</button>
           <audio id="Roman Castle">
