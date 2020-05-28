@@ -1,88 +1,8 @@
-// Interactive Style Changes 
-
-function changeHBackground ()  {
-
-  document.getElementById("main heading").style.backgroundColor= "gold";
-  document.getElementById("main heading").style.fontWeight="bold";
-  document.getElementById("main heading").style.fontStyle= "italic";
-  document.getElementById("main heading").style.color= "purple";
-
-}
-
-function returnHBackground ()  {
-
-  document.getElementById("main heading").style.backgroundColor= "";
-  document.getElementById("main heading").style.fontWeight="";
-  document.getElementById("main heading").style.fontStyle= "";
-  document.getElementById("main heading").style.color= "";
-
-
-}
-
-function changePStuff ()  {
-
-document.getElementById("main p").style.backgroundColor= "yellow";
-document.getElementById("main p").style.fontSize="xx-large";
-document.getElementById("main p").style.fontWeight="bold";
-document.getElementById("main p").style.fontStyle="oblique";
-document.getElementById("main p").style.color= "magenta";
-
-}
-
-function returnPStuff ()  {
-  document.getElementById("main p").style.backgroundColor= "";
-  document.getElementById("main p").style.fontSize="";
-  document.getElementById("main p").style.fontWeight="";
-  document.getElementById("main p").style.fontStyle="";
-  document.getElementById("main p").style.color= "";
-  
-}
-
-function changeGStuff ()  {
-
-  document.getElementById("guesses").style.backgroundColor= "red";
-  document.getElementById("guesses").style.fontSize="xx-large";
-  document.getElementById("guesses").style.fontWeight="bold";
-  document.getElementById("guesses").style.fontStyle="italic";
-  document.getElementById("guesses").style.color= "purple";
-
-
-}
-
-function returnGStuff ()  {
-  document.getElementById("guesses").style.backgroundColor= "";
-  document.getElementById("guesses").style.fontSize="";
-  document.getElementById("guesses").style.fontWeight="";
-  document.getElementById("guesses").style.fontStyle="";
-  document.getElementById("guesses").style.color= "";
-
-}
-
-function changeG2Stuff ()  {
-
-  document.getElementById("guesses 2").style.backgroundColor= "blue";
-  document.getElementById("guesses 2").style.fontSize="200%";
-  document.getElementById("guesses 2").style.fontWeight="bold";
-  document.getElementById("guesses 2").style.fontSize="xx-large";
-  document.getElementById("guesses 2").style.fontStyle="oblique";
-  document.getElementById("guesses 2").style.color= "purple";
-
-}
-
-function returnG2Stuff ()  {
-    document.getElementById("guesses 2").style.backgroundColor= "";
-    document.getElementById("guesses 2").style.fontSize="";
-    document.getElementById("guesses 2").style.fontWeight="";
-    document.getElementById("guesses 2").style.fontStyle="";
-    document.getElementById("guesses 2").style.color= "";
-
-}
-
 //Create An Array 
 
 //Array of Emperors
 
-var emperors =  [
+let emperors =  [
 
 "Augustus",
 
@@ -118,18 +38,18 @@ var emperors =  [
 
 // VARIABLES, TO BE GIVEN VALUE BY FUNCTIONS
 
-var randomEmp = "";
-var litterisofEmp = "";
-var blanks= 0;
-var blanksAndCorrect= [];
-var incorrectGuess = [];
+let randomEmp = "";
+let litterisofEmp = "";
+let blanks= 0;
+let blanksAndCorrect= [];
+let incorrectGuess = [];
 
 
 // VARIABLES TO BE INCREASED, COUNTERS
 
-var victories = 0;
-var vanquished = 0;
-var attemptsRemain = 10
+let victories = 0;
+let vanquished = 0;
+let attemptsRemain = 10
 
 
 // FUNCTIONS OF THE GAME 
@@ -138,11 +58,17 @@ var attemptsRemain = 10
 
 // COMPUTER PULLS RANDOM EMPEROR
 
+function Begin()  {
+
 randomEmp = emperors[Math.floor(Math.random()* emperors.length)];
 
 console.log(randomEmp);
 
 alert(randomEmp);
+
+}
+
+
 
 // DIVIDE RANDOM EMP INTO DIFFERENT ARRAYS+STORE IN NEW ARRAY
 
@@ -166,6 +92,109 @@ for (var i = 0; i< blanks; i++) {
 // DOM MANIPULATION TO SHOW "_" IN THE HTML
 
 document.getElementById("currentEmp").innerHTML = " " + blanksAndCorrect.join(" ");
+
+// PLAYER GUESSES, CHECK IF RIGHT OR WRONG
+
+function verifyLetters(Letters)  {
+
+  let letterInWord = false;
+
+  for (let i=0; i < blanks; i++) {
+
+    if (randomEmp[i] == letter) {
+
+      letterInWord = true;
+
+    }
+  }
+
+  if (letterInWord)  {
+
+    for (let i=0; i < blanks; i++)  {
+
+      if (randomEmp[i] == letter) {
+
+      blanksAndCorrect[i] = letter;
+
+      }
+    }
+  }
+
+  else {
+
+    incorrectGuess.push(letter);
+    attemptsRemain--;
+
+
+  }
+
+  console.log(blanksAndCorrect);
+
+}
+
+// KEEP GOING UNTIL ATTEMPTS REMAINING = ZERO
+
+// PLAYER EITHER LOSES OR WINS, MODIFY VICTORY OR VANQUISHED DISPLAY
+
+function finish()  {
+
+  //VICTORY+DISPLAY WINS+BEGIN AGAIN
+
+ if (litterisofEmp.toString() == blanksAndCorrect.toString())  {
+ victories++;
+ beginAnew();
+ document.getElementById("victoryrecorder").innerHTML = "" + victories;
+
+}
+
+//VANQUISHED+DISPLAY LOSSES+BEGIN AGAIN
+
+else if (attemptsRemain===0)  {
+losses++;
+beginAnew();
+document.getElementByID("currentEmp").innerHTML = + blanksAndCorrect.join(" ");
+document.getElementByID("attemptsRemain").innerHTML = " " + attemptsRemain;
+
+}
+
+}
+
+
+
+// RESET+REPEAT 
+
+function beginAnew ()  {
+attemptsRemain = 10;
+incorrectGuess = [];
+blanksAndCorrect = [];
+
+}
+
+//CHECKING INPUT AND CONVERT TO LOWERCASE THEN STORE
+
+Begin();
+
+document.onkeyup = function (event)   {
+  var attempts = String.fromCharCode(event.keyCode).toLowerCase();
+
+  //DOES ENTERED ATTEMPT MATCH VALUE OF RANDOM WORD 
+
+  checkLetter(attempts);
+
+  //DO THEY WIN  DO THEY LOSE
+
+  finish();
+
+  //WHAT DID THE PLAYER GUESS
+
+  console.log(attempts);
+
+  //WHAT ATTEMPTS WERE WRONG
+
+  document.getElementById("playerattempts").innerHTML = " " + incorrectLitteris.join(" ");
+
+
+}
 
 
 
